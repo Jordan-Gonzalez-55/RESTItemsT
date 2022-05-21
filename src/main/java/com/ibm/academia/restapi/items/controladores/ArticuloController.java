@@ -2,7 +2,9 @@ package com.ibm.academia.restapi.items.controladores;
 
 
 import com.ibm.academia.restapi.items.modelo.entidades.Articulo;
+import com.ibm.academia.restapi.items.modelo.entidades.Producto;
 import com.ibm.academia.restapi.items.servicios.IArticuloService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import feign.FeignException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.awt.geom.RectangularShape;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,17 +28,25 @@ public class ArticuloController {
 
     private final static Logger logger = LoggerFactory.getLogger(ArticuloController.class);
 
-    @Autowired
-    @Qualifier("serviceFeign")
-    private IArticuloService articuloService;
+    //@Autowired
+    //@Qualifier("serviceFeign")
+    //private IArticuloService articuloService;
 
+
+    @Autowired
+    @Qualifier("serviceRestTemplate")
+    private IArticuloService articuloService;
     @GetMapping("/listar")
+
+
     public ResponseEntity<?> consultarTodoArticulo(){
         List<Articulo> articulos = articuloService.buscarTodosArticulos();
         return new ResponseEntity<List<Articulo>>(articulos, HttpStatus.OK);
 
     }
 
+
+    @HystrixCommand(fallbackMethod = "metodoAlternativo")
     @GetMapping("/ver-detalle/articulo/productoid/{productoid}/cantidad/{cantidad}")
     public ResponseEntity<?> consultarArticuloDetalle(@PathVariable Long productoid,  @PathVariable Integer cantidad){
         Map<String, Object> respuesta = new HashMap<String, Object>();
@@ -58,5 +69,18 @@ public class ArticuloController {
         return new ResponseEntity<Articulo>(articulo, HttpStatus.OK);
     }
 
+
+    public ResponseEntity<?> metodoAlternativo(Long productoid, Integer cantidad ){
+
+        Articulo articulo = new Articulo();
+        Producto producto = new Producto();
+
+        articulo.setCantidad(cantidad);
+        producto.setId(productoid);
+        producto.setNombre("Camara Sony");
+        producto.setPrecio(500.00);
+        articulo.setProducto(producto);
+        return new ResponseEntity<Articulo>(articulo, HttpStatus.OK);
+    }
 
 }

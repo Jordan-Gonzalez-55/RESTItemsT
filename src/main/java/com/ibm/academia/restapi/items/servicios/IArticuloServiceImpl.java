@@ -18,7 +18,7 @@ public class IArticuloServiceImpl implements IArticuloService {
     @Override
     public List<Articulo> buscarTodosArticulos() {
 
-        List<Producto> productos = Arrays.asList(clienteRest.getForObject("http://localhost:8001/api/vi/rest-productos/producto/listar",Producto[].class));
+        List<Producto> productos = Arrays.asList(clienteRest.getForObject("http://api-productos/api/vi/rest-productos/producto/listar",Producto[].class));
         return productos
                 .stream()
                 .map(p-> new Articulo(p,1))
@@ -30,7 +30,7 @@ public class IArticuloServiceImpl implements IArticuloService {
 
         Map<String, String> pathVariables = new HashMap<String, String>();
         pathVariables.put("id", productoid.toString());
-        Producto producto = clienteRest.getForObject("http://localhost:8001/api/vi/rest-productos/producto/ver-detalle/id/{id}",Producto.class, pathVariables);
+        Producto producto = clienteRest.getForObject("http://api-productos/api/vi/rest-productos/producto/ver-detalle/id/{id}",Producto.class, pathVariables);
         return new Articulo(producto, cantidad);
     }
 }

@@ -1,148 +1,317 @@
-2022-05-16 14:19:35,963 INFO org.springframework.cloud.context.scope.GenericScope [restartedMain] BeanFactory id=287d803c-271b-3598-9891-12fd88fc21fa
-2022-05-16 14:19:37,435 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8002 (http)
-2022-05-16 14:19:37,465 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8002"]
-2022-05-16 14:19:37,469 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
-2022-05-16 14:19:37,470 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.46]
-2022-05-16 14:19:37,811 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
-2022-05-16 14:19:37,812 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 3724 ms
-2022-05-16 14:19:38,168 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'refreshEventListener' defined in class path resource [org/springframework/cloud/autoconfigure/RefreshAutoConfiguration.class]: Unsatisfied dependency expressed through method 'refreshEventListener' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configDataContextRefresher' defined in class path resource [org/springframework/cloud/autoconfigure/RefreshAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.context.refresh.ConfigDataContextRefresher]: Factory method 'configDataContextRefresher' threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/logging/DeferredLogFactory
-2022-05-16 14:19:38,173 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'articuloController': Unsatisfied dependency expressed through field 'articuloService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'serviceFeign': Unsatisfied dependency expressed through field 'clienteFeign'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'refreshEventListener' defined in class path resource [org/springframework/cloud/autoconfigure/RefreshAutoConfiguration.class]: Unsatisfied dependency expressed through method 'refreshEventListener' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configDataContextRefresher' defined in class path resource [org/springframework/cloud/autoconfigure/RefreshAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.context.refresh.ConfigDataContextRefresher]: Factory method 'configDataContextRefresher' threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/logging/DeferredLogFactory
-2022-05-16 14:19:38,173 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
-2022-05-16 14:19:38,213 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [restartedMain] 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-05-16 14:19:38,261 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'articuloController': Unsatisfied dependency expressed through field 'articuloService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'serviceFeign': Unsatisfied dependency expressed through field 'clienteFeign'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'refreshEventListener' defined in class path resource [org/springframework/cloud/autoconfigure/RefreshAutoConfiguration.class]: Unsatisfied dependency expressed through method 'refreshEventListener' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configDataContextRefresher' defined in class path resource [org/springframework/cloud/autoconfigure/RefreshAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.context.refresh.ConfigDataContextRefresher]: Factory method 'configDataContextRefresher' threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/logging/DeferredLogFactory
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1425)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:755)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:402)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1247)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1236)
-	at com.ibm.academia.restapi.items.RestItemsTApplication.main(RestItemsTApplication.java:14)
+2022-05-20 00:20:07,792 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-05-20 00:20:07,796 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 4056 ms
+2022-05-20 00:20:07,857 INFO org.springframework.boot.web.servlet.ServletRegistrationBean [restartedMain] Servlet dispatcherServlet mapped to [/]
+2022-05-20 00:20:07,864 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-05-20 00:20:07,875 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-05-20 00:20:07,876 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'formContentFilter' to: [/*]
+2022-05-20 00:20:07,876 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'requestContextFilter' to: [/*]
+2022-05-20 00:20:08,248 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-05-20 00:20:08,478 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2022-05-20 00:20:08,478 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-05-20 00:20:08,488 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2022-05-20 00:20:08,488 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-05-20 00:20:08,859 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-20 00:20:10,492 INFO org.springframework.cloud.netflix.eureka.InstanceInfoFactory [restartedMain] Setting initial instance status as: STARTING
+2022-05-20 00:20:10,575 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Initializing Eureka in region us-east-1
+2022-05-20 00:20:10,912 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using JSON encoding codec LegacyJacksonJson
+2022-05-20 00:20:10,912 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using JSON decoding codec LegacyJacksonJson
+2022-05-20 00:20:11,210 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using XML encoding codec XStreamXml
+2022-05-20 00:20:11,211 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using XML decoding codec XStreamXml
+2022-05-20 00:20:11,519 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [restartedMain] Resolving eureka endpoints via configuration
+2022-05-20 00:20:11,840 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Disable delta property : false
+2022-05-20 00:20:11,841 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Single vip registry refresh property : null
+2022-05-20 00:20:11,842 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Force full registry fetch : false
+2022-05-20 00:20:11,843 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Application is null : false
+2022-05-20 00:20:11,843 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Registered Applications size is zero : true
+2022-05-20 00:20:11,844 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Application version is -1: true
+2022-05-20 00:20:11,845 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Getting all instance registry info from the eureka server
+2022-05-20 00:20:12,291 INFO com.netflix.discovery.DiscoveryClient [restartedMain] The response status is 200
+2022-05-20 00:20:12,295 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Starting heartbeat executor: renew interval is: 30
+2022-05-20 00:20:12,299 INFO com.netflix.discovery.InstanceInfoReplicator [restartedMain] InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-05-20 00:20:12,306 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Discovery Client initialized at timestamp 1653024012304 with initial instances count: 1
+2022-05-20 00:20:12,311 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry [restartedMain] Registering application API-ITEMS with eureka with status UP
+2022-05-20 00:20:12,312 INFO com.netflix.discovery.DiscoveryClient$3 [restartedMain] Saw local status change event StatusChangeEvent [timestamp=1653024012312, current=UP, previous=STARTING]
+2022-05-20 00:20:12,315 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002: registering service...
+2022-05-20 00:20:12,333 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8002"]
+2022-05-20 00:20:12,353 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Using a shared selector for servlet write/read
+2022-05-20 00:20:12,384 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002 - registration status: 204
+2022-05-20 00:20:12,389 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8002 (http) with context path '/api/vi/rest-items'
+2022-05-20 00:20:12,390 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration [restartedMain] Updating port to 8002
+2022-05-20 00:20:12,822 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started RestItemsTApplication in 11.41 seconds (JVM running for 13.061)
+2022-05-20 00:21:36,914 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8002-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-20 00:21:36,916 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8002-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-05-20 00:21:36,957 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8002-exec-2] Completed initialization in 40 ms
+2022-05-20 00:21:38,578 INFO com.netflix.config.ChainedDynamicProperty$ChainLink [hystrix-ArticuloController-1] Flipping property: api-productos.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-05-20 00:21:38,688 INFO com.netflix.util.concurrent.ShutdownEnabledTimer [hystrix-ArticuloController-1] Shutdown hook installed for: NFLoadBalancer-PingTimer-api-productos
+2022-05-20 00:21:38,689 INFO com.netflix.loadbalancer.BaseLoadBalancer [hystrix-ArticuloController-1] Client: api-productos instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=api-productos,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2022-05-20 00:21:38,706 INFO com.netflix.loadbalancer.DynamicServerListLoadBalancer [hystrix-ArticuloController-1] Using serverListUpdater PollingServerListUpdater
+2022-05-20 00:21:38,760 INFO com.netflix.config.ChainedDynamicProperty$ChainLink [hystrix-ArticuloController-1] Flipping property: api-productos.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-05-20 00:21:38,768 INFO com.netflix.loadbalancer.DynamicServerListLoadBalancer [hystrix-ArticuloController-1] DynamicServerListLoadBalancer for client api-productos initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=api-productos,current list of Servers=[LAPTOP-IQ104NSE:56104],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:LAPTOP-IQ104NSE:56104;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Wed Dec 31 18:00:00 CST 1969;	First connection made: Wed Dec 31 18:00:00 CST 1969;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@6afd86c3
+2022-05-20 00:21:39,728 INFO com.netflix.config.ChainedDynamicProperty$ChainLink [PollingServerListUpdater-0] Flipping property: api-productos.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-05-20 00:25:11,863 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-05-20 00:30:11,874 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-05-20 00:34:29,818 INFO com.netflix.loadbalancer.PollingServerListUpdater$LazyHolder$2 [Thread-13] Shutting down the Executor Pool for PollingServerListUpdater
+2022-05-20 00:34:29,819 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry [Thread-9] Unregistering application API-ITEMS with eureka with status DOWN
+2022-05-20 00:34:29,821 WARN com.netflix.discovery.DiscoveryClient$3 [Thread-9] Saw local status change event StatusChangeEvent [timestamp=1653024869821, current=DOWN, previous=UP]
+2022-05-20 00:34:29,823 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002: registering service...
+2022-05-20 00:34:29,835 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-9] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-05-20 00:34:29,846 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002 - registration status: 204
+2022-05-20 00:34:29,872 INFO com.netflix.util.concurrent.ShutdownEnabledTimer [Thread-9] Shutdown hook removed for: NFLoadBalancer-PingTimer-api-productos
+2022-05-20 00:34:29,880 INFO com.netflix.util.concurrent.ShutdownEnabledTimer [Thread-9] Exception caught (might be ok if at shutdown)
+java.lang.IllegalStateException: Shutdown in progress
+	at java.base/java.lang.ApplicationShutdownHooks.remove(ApplicationShutdownHooks.java:82)
+	at java.base/java.lang.Runtime.removeShutdownHook(Runtime.java:241)
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70)
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632)
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883)
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'serviceFeign': Unsatisfied dependency expressed through field 'clienteFeign'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'refreshEventListener' defined in class path resource [org/springframework/cloud/autoconfigure/RefreshAutoConfiguration.class]: Unsatisfied dependency expressed through method 'refreshEventListener' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configDataContextRefresher' defined in class path resource [org/springframework/cloud/autoconfigure/RefreshAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.context.refresh.ConfigDataContextRefresher]: Factory method 'configDataContextRefresher' threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/logging/DeferredLogFactory
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1425)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 26 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'refreshEventListener' defined in class path resource [org/springframework/cloud/autoconfigure/RefreshAutoConfiguration.class]: Unsatisfied dependency expressed through method 'refreshEventListener' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configDataContextRefresher' defined in class path resource [org/springframework/cloud/autoconfigure/RefreshAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.context.refresh.ConfigDataContextRefresher]: Factory method 'configDataContextRefresher' threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/logging/DeferredLogFactory
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:799)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:540)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
-	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:247)
-	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:204)
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:134)
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:404)
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:410)
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:361)
-	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:898)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:554)
-	at org.springframework.cloud.context.named.NamedContextFactory.createContext(NamedContextFactory.java:155)
-	at org.springframework.cloud.context.named.NamedContextFactory.getContext(NamedContextFactory.java:108)
-	at org.springframework.cloud.context.named.NamedContextFactory.getInstance(NamedContextFactory.java:164)
-	at org.springframework.cloud.openfeign.FeignClientFactoryBean.get(FeignClientFactoryBean.java:344)
-	at org.springframework.cloud.openfeign.FeignClientFactoryBean.feign(FeignClientFactoryBean.java:123)
-	at org.springframework.cloud.openfeign.FeignClientFactoryBean.getTarget(FeignClientFactoryBean.java:413)
-	at org.springframework.cloud.openfeign.FeignClientFactoryBean.getObject(FeignClientFactoryBean.java:402)
-	at org.springframework.cloud.openfeign.FeignClientsRegistrar.lambda$registerFeignClient$0(FeignClientsRegistrar.java:235)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.obtainFromSupplier(AbstractAutowireCapableBeanFactory.java:1235)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 40 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configDataContextRefresher' defined in class path resource [org/springframework/cloud/autoconfigure/RefreshAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.context.refresh.ConfigDataContextRefresher]: Factory method 'configDataContextRefresher' threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/logging/DeferredLogFactory
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:637)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1181)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1307)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:886)
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:790)
-	... 77 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.cloud.context.refresh.ConfigDataContextRefresher]: Factory method 'configDataContextRefresher' threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/boot/logging/DeferredLogFactory
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:652)
-	... 91 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: org/springframework/boot/logging/DeferredLogFactory
-	at org.springframework.cloud.autoconfigure.RefreshAutoConfiguration.configDataContextRefresher(RefreshAutoConfiguration.java:118)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:337)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:271)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:961)
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:931)
+2022-05-20 00:34:29,889 INFO com.netflix.discovery.DiscoveryClient [Thread-9] Shutting down DiscoveryClient ...
+2022-05-20 00:34:32,904 INFO com.netflix.discovery.DiscoveryClient [Thread-9] Unregistering ...
+2022-05-20 00:34:32,924 INFO com.netflix.discovery.DiscoveryClient [Thread-9] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002 - deregister  status: 200
+2022-05-20 00:34:32,975 INFO com.netflix.discovery.DiscoveryClient [Thread-9] Completed shut down of DiscoveryClient
+2022-05-20 00:35:09,804 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-20 00:35:12,078 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-05-20 00:35:15,131 INFO org.springframework.cloud.context.scope.GenericScope [restartedMain] BeanFactory id=5118abf9-0aca-37a4-968d-795f64c43a44
+2022-05-20 00:35:19,041 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8002 (http)
+2022-05-20 00:35:19,079 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8002"]
+2022-05-20 00:35:19,097 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-05-20 00:35:19,097 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet Engine: Apache Tomcat/9.0.12
+2022-05-20 00:35:19,131 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-11.0.13\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.13\bin;C:\Program Files\Git\cmd;C:\Users\106860781\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Salesforce CLI\bin;C:\Users\106860781\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\sfdx\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.3\bin;;C:\Users\106860781\AppData\Local\Box\Box Edit\;.]
+2022-05-20 00:35:19,584 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-05-20 00:35:19,585 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 7389 ms
+2022-05-20 00:35:19,653 INFO org.springframework.boot.web.servlet.ServletRegistrationBean [restartedMain] Servlet dispatcherServlet mapped to [/]
+2022-05-20 00:35:19,663 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-05-20 00:35:19,663 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-05-20 00:35:19,664 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'formContentFilter' to: [/*]
+2022-05-20 00:35:19,664 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'requestContextFilter' to: [/*]
+2022-05-20 00:35:20,395 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-05-20 00:35:20,691 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2022-05-20 00:35:20,692 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-05-20 00:35:20,708 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2022-05-20 00:35:20,709 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-05-20 00:35:21,253 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-20 00:35:23,280 INFO org.springframework.cloud.netflix.eureka.InstanceInfoFactory [restartedMain] Setting initial instance status as: STARTING
+2022-05-20 00:35:23,387 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Initializing Eureka in region us-east-1
+2022-05-20 00:35:23,883 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using JSON encoding codec LegacyJacksonJson
+2022-05-20 00:35:23,883 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using JSON decoding codec LegacyJacksonJson
+2022-05-20 00:35:24,448 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using XML encoding codec XStreamXml
+2022-05-20 00:35:24,449 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using XML decoding codec XStreamXml
+2022-05-20 00:35:25,077 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [restartedMain] Resolving eureka endpoints via configuration
+2022-05-20 00:35:25,432 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Disable delta property : false
+2022-05-20 00:35:25,433 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Single vip registry refresh property : null
+2022-05-20 00:35:25,434 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Force full registry fetch : false
+2022-05-20 00:35:25,434 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Application is null : false
+2022-05-20 00:35:25,435 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Registered Applications size is zero : true
+2022-05-20 00:35:25,436 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Application version is -1: true
+2022-05-20 00:35:25,436 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Getting all instance registry info from the eureka server
+2022-05-20 00:35:25,655 INFO com.netflix.discovery.DiscoveryClient [restartedMain] The response status is 200
+2022-05-20 00:35:25,660 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Starting heartbeat executor: renew interval is: 30
+2022-05-20 00:35:25,671 INFO com.netflix.discovery.InstanceInfoReplicator [restartedMain] InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-05-20 00:35:25,768 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Discovery Client initialized at timestamp 1653024925764 with initial instances count: 0
+2022-05-20 00:35:25,778 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry [restartedMain] Registering application API-ITEMS with eureka with status UP
+2022-05-20 00:35:25,780 INFO com.netflix.discovery.DiscoveryClient$3 [restartedMain] Saw local status change event StatusChangeEvent [timestamp=1653024925780, current=UP, previous=STARTING]
+2022-05-20 00:35:25,788 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002: registering service...
+2022-05-20 00:35:25,810 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8002"]
+2022-05-20 00:35:25,970 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Using a shared selector for servlet write/read
+2022-05-20 00:35:26,046 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002 - registration status: 204
+2022-05-20 00:35:26,081 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8002 (http) with context path '/api/vi/rest-items'
+2022-05-20 00:35:26,083 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration [restartedMain] Updating port to 8002
+2022-05-20 00:35:26,581 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started RestItemsTApplication in 21.723 seconds (JVM running for 24.85)
+2022-05-20 00:35:55,665 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Disable delta property : false
+2022-05-20 00:35:55,666 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Single vip registry refresh property : null
+2022-05-20 00:35:55,666 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Force full registry fetch : false
+2022-05-20 00:35:55,666 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application is null : false
+2022-05-20 00:35:55,666 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Registered Applications size is zero : true
+2022-05-20 00:35:55,667 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Application version is -1: false
+2022-05-20 00:35:55,667 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] Getting all instance registry info from the eureka server
+2022-05-20 00:35:55,736 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-CacheRefreshExecutor-0] The response status is 200
+2022-05-20 00:36:35,021 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8002-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-20 00:36:35,021 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8002-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-05-20 00:36:35,044 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8002-exec-2] Completed initialization in 23 ms
+2022-05-20 00:36:36,207 INFO com.netflix.config.ChainedDynamicProperty$ChainLink [hystrix-ArticuloController-1] Flipping property: api-productos.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-05-20 00:36:36,360 INFO com.netflix.util.concurrent.ShutdownEnabledTimer [hystrix-ArticuloController-1] Shutdown hook installed for: NFLoadBalancer-PingTimer-api-productos
+2022-05-20 00:36:36,368 INFO com.netflix.loadbalancer.BaseLoadBalancer [hystrix-ArticuloController-1] Client: api-productos instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=api-productos,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2022-05-20 00:36:36,387 INFO com.netflix.loadbalancer.DynamicServerListLoadBalancer [hystrix-ArticuloController-1] Using serverListUpdater PollingServerListUpdater
+2022-05-20 00:36:36,465 INFO com.netflix.config.ChainedDynamicProperty$ChainLink [hystrix-ArticuloController-1] Flipping property: api-productos.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-05-20 00:36:36,470 INFO com.netflix.loadbalancer.DynamicServerListLoadBalancer [hystrix-ArticuloController-1] DynamicServerListLoadBalancer for client api-productos initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=api-productos,current list of Servers=[LAPTOP-IQ104NSE:51355],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:LAPTOP-IQ104NSE:51355;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Wed Dec 31 18:00:00 CST 1969;	First connection made: Wed Dec 31 18:00:00 CST 1969;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@4a45f285
+2022-05-20 00:36:37,411 INFO com.netflix.config.ChainedDynamicProperty$ChainLink [PollingServerListUpdater-0] Flipping property: api-productos.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-05-20 00:40:25,449 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-05-20 00:40:31,011 INFO com.netflix.loadbalancer.PollingServerListUpdater$LazyHolder$2 [Thread-13] Shutting down the Executor Pool for PollingServerListUpdater
+2022-05-20 00:40:31,011 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry [Thread-9] Unregistering application API-ITEMS with eureka with status DOWN
+2022-05-20 00:40:31,014 WARN com.netflix.discovery.DiscoveryClient$3 [Thread-9] Saw local status change event StatusChangeEvent [timestamp=1653025231014, current=DOWN, previous=UP]
+2022-05-20 00:40:31,016 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002: registering service...
+2022-05-20 00:40:31,028 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-9] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-05-20 00:40:31,044 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002 - registration status: 204
+2022-05-20 00:40:31,062 INFO com.netflix.util.concurrent.ShutdownEnabledTimer [Thread-9] Shutdown hook removed for: NFLoadBalancer-PingTimer-api-productos
+2022-05-20 00:40:31,068 INFO com.netflix.util.concurrent.ShutdownEnabledTimer [Thread-9] Exception caught (might be ok if at shutdown)
+java.lang.IllegalStateException: Shutdown in progress
+	at java.base/java.lang.ApplicationShutdownHooks.remove(ApplicationShutdownHooks.java:82)
+	at java.base/java.lang.Runtime.removeShutdownHook(Runtime.java:241)
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70)
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632)
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883)
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
-	... 92 common frames omitted
-Caused by: java.lang.ClassNotFoundException: org.springframework.boot.logging.DeferredLogFactory
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178)
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521)
-	... 98 common frames omitted
-2022-05-16 14:20:12,821 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting RestItemsTApplication using Java 11.0.13 on LAPTOP-IQ104NSE with PID 26120 (C:\Users\106860781\Documents\Microservicios Java\RESTItemsT\target\classes started by 106860781 in C:\Users\106860781\Documents\Microservicios Java\RESTItemsT)
-2022-05-16 14:20:12,829 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
-2022-05-16 14:20:12,928 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-05-16 14:20:12,928 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-05-16 14:20:14,411 INFO org.springframework.cloud.context.scope.GenericScope [restartedMain] BeanFactory id=f82bf5c0-0704-3fdd-ae20-6dc0f3866e22
-2022-05-16 14:20:15,827 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8002 (http)
-2022-05-16 14:20:15,838 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8002"]
-2022-05-16 14:20:15,844 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
-2022-05-16 14:20:15,845 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.62]
-2022-05-16 14:20:16,008 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
-2022-05-16 14:20:16,015 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 3086 ms
-2022-05-16 14:20:16,350 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2022-05-16 14:20:17,466 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8002"]
-2022-05-16 14:20:17,536 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8002 (http) with context path '/api/vi/rest-items'
-2022-05-16 14:20:17,952 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started RestItemsTApplication in 6.798 seconds (JVM running for 8.331)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:337)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:271)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:961)
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:931)
+2022-05-20 00:40:31,078 INFO com.netflix.discovery.DiscoveryClient [Thread-9] Shutting down DiscoveryClient ...
+2022-05-20 00:40:34,084 INFO com.netflix.discovery.DiscoveryClient [Thread-9] Unregistering ...
+2022-05-20 00:40:34,105 INFO com.netflix.discovery.DiscoveryClient [Thread-9] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002 - deregister  status: 200
+2022-05-20 00:40:34,154 INFO com.netflix.discovery.DiscoveryClient [Thread-9] Completed shut down of DiscoveryClient
+2022-05-20 21:39:33,487 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-05-20 21:39:34,547 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2022-05-20 21:39:36,816 INFO org.springframework.cloud.context.scope.GenericScope [restartedMain] BeanFactory id=5118abf9-0aca-37a4-968d-795f64c43a44
+2022-05-20 21:39:38,957 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8002 (http)
+2022-05-20 21:39:38,980 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8002"]
+2022-05-20 21:39:38,993 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2022-05-20 21:39:38,993 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet Engine: Apache Tomcat/9.0.12
+2022-05-20 21:39:39,011 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk-11.0.13\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Java\jdk-11.0.13\bin;C:\Program Files\Git\cmd;C:\Users\106860781\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Salesforce CLI\bin;C:\Users\106860781\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\sfdx\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.3\bin;;C:\Users\106860781\AppData\Local\Box\Box Edit\;.]
+2022-05-20 21:39:39,367 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2022-05-20 21:39:39,368 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 4791 ms
+2022-05-20 21:39:39,438 INFO org.springframework.boot.web.servlet.ServletRegistrationBean [restartedMain] Servlet dispatcherServlet mapped to [/]
+2022-05-20 21:39:39,447 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'characterEncodingFilter' to: [/*]
+2022-05-20 21:39:39,448 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2022-05-20 21:39:39,449 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'formContentFilter' to: [/*]
+2022-05-20 21:39:39,450 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [restartedMain] Mapping filter: 'requestContextFilter' to: [/*]
+2022-05-20 21:39:39,897 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
+2022-05-20 21:39:40,125 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2022-05-20 21:39:40,138 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-05-20 21:39:40,160 WARN com.netflix.config.sources.URLConfigurationSource [restartedMain] No URLs will be polled as dynamic configuration sources.
+2022-05-20 21:39:40,161 INFO com.netflix.config.sources.URLConfigurationSource [restartedMain] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2022-05-20 21:39:40,631 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2022-05-20 21:39:42,294 INFO org.springframework.cloud.netflix.eureka.InstanceInfoFactory [restartedMain] Setting initial instance status as: STARTING
+2022-05-20 21:39:42,390 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Initializing Eureka in region us-east-1
+2022-05-20 21:39:42,715 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using JSON encoding codec LegacyJacksonJson
+2022-05-20 21:39:42,716 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using JSON decoding codec LegacyJacksonJson
+2022-05-20 21:39:43,051 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using XML encoding codec XStreamXml
+2022-05-20 21:39:43,051 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [restartedMain] Using XML decoding codec XStreamXml
+2022-05-20 21:39:43,319 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [restartedMain] Resolving eureka endpoints via configuration
+2022-05-20 21:39:43,612 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Disable delta property : false
+2022-05-20 21:39:43,621 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Single vip registry refresh property : null
+2022-05-20 21:39:43,622 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Force full registry fetch : false
+2022-05-20 21:39:43,623 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Application is null : false
+2022-05-20 21:39:43,624 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Registered Applications size is zero : true
+2022-05-20 21:39:43,624 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Application version is -1: true
+2022-05-20 21:39:43,625 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Getting all instance registry info from the eureka server
+2022-05-20 21:39:44,179 INFO com.netflix.discovery.DiscoveryClient [restartedMain] The response status is 200
+2022-05-20 21:39:44,186 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Starting heartbeat executor: renew interval is: 30
+2022-05-20 21:39:44,196 INFO com.netflix.discovery.InstanceInfoReplicator [restartedMain] InstanceInfoReplicator onDemand update allowed rate per min is 4
+2022-05-20 21:39:44,210 INFO com.netflix.discovery.DiscoveryClient [restartedMain] Discovery Client initialized at timestamp 1653100784208 with initial instances count: 3
+2022-05-20 21:39:44,218 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry [restartedMain] Registering application API-ITEMS with eureka with status UP
+2022-05-20 21:39:44,218 INFO com.netflix.discovery.DiscoveryClient$3 [restartedMain] Saw local status change event StatusChangeEvent [timestamp=1653100784218, current=UP, previous=STARTING]
+2022-05-20 21:39:44,231 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002: registering service...
+2022-05-20 21:39:44,266 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8002"]
+2022-05-20 21:39:44,307 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Using a shared selector for servlet write/read
+2022-05-20 21:39:44,360 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002 - registration status: 204
+2022-05-20 21:39:44,393 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8002 (http) with context path '/api/vi/rest-items'
+2022-05-20 21:39:44,393 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration [restartedMain] Updating port to 8002
+2022-05-20 21:39:44,938 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started RestItemsTApplication in 12.774 seconds (JVM running for 14.689)
+2022-05-20 21:44:43,633 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-05-20 21:47:59,875 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8002-exec-5] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-20 21:47:59,877 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8002-exec-5] Initializing Servlet 'dispatcherServlet'
+2022-05-20 21:47:59,919 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8002-exec-5] Completed initialization in 40 ms
+2022-05-20 21:48:00,876 INFO com.netflix.config.ChainedDynamicProperty$ChainLink [http-nio-8002-exec-5] Flipping property: api-productos.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-05-20 21:48:00,963 INFO com.netflix.util.concurrent.ShutdownEnabledTimer [http-nio-8002-exec-5] Shutdown hook installed for: NFLoadBalancer-PingTimer-api-productos
+2022-05-20 21:48:00,964 INFO com.netflix.loadbalancer.BaseLoadBalancer [http-nio-8002-exec-5] Client: api-productos instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=api-productos,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2022-05-20 21:48:00,975 INFO com.netflix.loadbalancer.DynamicServerListLoadBalancer [http-nio-8002-exec-5] Using serverListUpdater PollingServerListUpdater
+2022-05-20 21:48:01,022 INFO com.netflix.config.ChainedDynamicProperty$ChainLink [http-nio-8002-exec-5] Flipping property: api-productos.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-05-20 21:48:01,025 INFO com.netflix.loadbalancer.DynamicServerListLoadBalancer [http-nio-8002-exec-5] DynamicServerListLoadBalancer for client api-productos initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=api-productos,current list of Servers=[LAPTOP-IQ104NSE:53559, LAPTOP-IQ104NSE:53571, LAPTOP-IQ104NSE:53546],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:3;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:LAPTOP-IQ104NSE:53559;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Wed Dec 31 18:00:00 CST 1969;	First connection made: Wed Dec 31 18:00:00 CST 1969;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:LAPTOP-IQ104NSE:53571;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Wed Dec 31 18:00:00 CST 1969;	First connection made: Wed Dec 31 18:00:00 CST 1969;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+, [Server:LAPTOP-IQ104NSE:53546;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Wed Dec 31 18:00:00 CST 1969;	First connection made: Wed Dec 31 18:00:00 CST 1969;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@2d699b1d
+2022-05-20 21:48:01,987 INFO com.netflix.config.ChainedDynamicProperty$ChainLink [PollingServerListUpdater-0] Flipping property: api-productos.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2022-05-20 21:49:43,648 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-05-20 21:54:43,675 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [AsyncResolver-bootstrap-executor-0] Resolving eureka endpoints via configuration
+2022-05-20 21:58:22,660 INFO com.netflix.loadbalancer.PollingServerListUpdater$LazyHolder$2 [Thread-13] Shutting down the Executor Pool for PollingServerListUpdater
+2022-05-20 21:58:22,667 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry [Thread-9] Unregistering application API-ITEMS with eureka with status DOWN
+2022-05-20 21:58:22,669 WARN com.netflix.discovery.DiscoveryClient$3 [Thread-9] Saw local status change event StatusChangeEvent [timestamp=1653101902669, current=DOWN, previous=UP]
+2022-05-20 21:58:22,673 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002: registering service...
+2022-05-20 21:58:22,685 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-9] Shutting down ExecutorService 'applicationTaskExecutor'
+2022-05-20 21:58:22,690 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002 - registration status: 204
+2022-05-20 21:58:22,731 INFO com.netflix.util.concurrent.ShutdownEnabledTimer [Thread-9] Shutdown hook removed for: NFLoadBalancer-PingTimer-api-productos
+2022-05-20 21:58:22,741 INFO com.netflix.util.concurrent.ShutdownEnabledTimer [Thread-9] Exception caught (might be ok if at shutdown)
+java.lang.IllegalStateException: Shutdown in progress
+	at java.base/java.lang.ApplicationShutdownHooks.remove(ApplicationShutdownHooks.java:82)
+	at java.base/java.lang.Runtime.removeShutdownHook(Runtime.java:241)
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70)
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632)
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883)
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:337)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:271)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:961)
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:256)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:571)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:543)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1052)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:504)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1059)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1035)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1011)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:931)
+2022-05-20 21:58:22,752 INFO com.netflix.discovery.DiscoveryClient [Thread-9] Shutting down DiscoveryClient ...
+2022-05-20 21:58:25,767 INFO com.netflix.discovery.DiscoveryClient [Thread-9] Unregistering ...
+2022-05-20 21:58:25,786 INFO com.netflix.discovery.DiscoveryClient [Thread-9] DiscoveryClient_API-ITEMS/LAPTOP-IQ104NSE:api-items:8002 - deregister  status: 200
+2022-05-20 21:58:25,815 INFO com.netflix.discovery.DiscoveryClient [Thread-9] Completed shut down of DiscoveryClient

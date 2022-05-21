@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 //Este no se puede quitar
-@FeignClient(name = "api-productos", url = "localhost:8001")
+@FeignClient(name = "api-productos")
 public interface ProductoClienteRest {
 
     @GetMapping("/api/vi/rest-productos/producto/listar")
